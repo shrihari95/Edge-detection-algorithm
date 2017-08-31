@@ -1,0 +1,62 @@
+// $Id: $
+// File name:   tb_ahb.sv
+// Created:     3/26/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Test bench for AHB
+`timescale 1ns / 10ps
+
+module tb_ahb();
+	localparam CLK_PERIOD = 10;
+	reg tb_HCLK;
+	reg tb_HRESETn;
+	reg tb_HREADY;
+	reg tb_HWRITE;
+	reg [31:0] read_addr;
+	reg [31:0] write_addr;
+	reg [31:0] tb_addr;
+	reg [31:0] tb_HRDATA;
+	reg [31:0] tb_start_addr;
+	reg [7:0] tb_pixel_out;
+	reg [31:0] tb_HWDATA;
+
+	reg [7:0] pixel_array [] = {};
+
+	ahb DUT_AHB_BLOCK
+	(
+		.HCLK(tb_HCLK), 
+		.HRESETn(tb_HRESETn), 
+		.HREADY(tb_HREADY), 
+		.HWRITE(tb_HWRITE), 
+		.addr(tb_addr), 
+		.HRDATA(tb_HRDATA), 
+		.start_addr(tb_start_addr), 
+		.pixel_out(tb_pixel_out), 
+		.HWDATA(tb_WDATA)
+	);
+
+	// Generate Clock
+	always
+	begin
+		tb_HCLK = 1'b0;
+		#(CLK_PERIOD / 2);
+		tb_HCLK = 1'b1;
+		#(CLK_PERIOD / 2);
+	end
+
+	// Select correct address
+	always_comb
+	begin
+		if (tb_HWRITE)
+			tb_addr = write_addr;
+		else
+			tb_addr = read_addr;
+	end
+
+	initial
+	begin
+		tb_HWRITE = 0;
+		read_addr = 0;
+	end
+endmodule

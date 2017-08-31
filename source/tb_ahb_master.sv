@@ -1,0 +1,150 @@
+// $Id: $
+// File name:   tb_ahb.sv
+// Created:     3/26/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Test bench for AHB
+`timescale 1ns / 10ps
+
+module tb_ahb_master();
+	localparam CLK_PERIOD = 40;
+	reg tb_HCLK;
+	reg tb_HRESETn;
+	reg tb_HREADY;
+	reg tb_read_enable;
+	reg tb_write_enable;
+	reg [15:0] tb_length;
+	reg [15:0] tb_width;
+	reg [31:0] tb_source_addr;
+	reg [31:0] tb_dest_addr;
+	reg [31:0] tb_HRDATA;
+	reg [7:0] tb_sobel_result1;
+	reg [7:0] tb_sobel_result2;
+	reg [31:0] tb_HADDR;
+	reg [7:0] tb_pixel_out;
+	reg [31:0] tb_HWDATA;
+	reg tb_HWRITE;
+	reg tb_transfer_data_complete_r;
+	reg tb_transfer_data_complete_w;
+	reg tb_shift_enable_r;
+
+	reg [7:0] pixel_array [0:179] = {8'h3E, 8'h9D, 8'h13, 8'hE1, 8'h14, 8'hA9, 8'h33, 8'h64, 8'h2F, 8'h7F, 8'hFF, 8'h4A, 
+					 8'h10, 8'h25, 8'hE0, 8'hA9, 8'h2F, 8'hA2, 8'hC1, 8'h98, 8'h32, 8'h09, 8'h2A, 8'h88, 
+					 8'hB1, 8'hA9, 8'h7C, 8'hD2, 8'h1A, 8'h3C, 8'hAD, 8'hD0, 8'hA2, 8'hF9, 8'hE0, 8'hC4, 
+					 8'h00, 8'hA2, 8'hE2, 8'h23, 8'hA8, 8'h3F, 8'h7F, 8'h33, 8'h64, 8'h04, 8'h10, 8'h09, 
+					 8'h7A, 8'h0D, 8'h2F, 8'hAA, 8'h70, 8'hA9, 8'h13, 8'h2F, 8'hF8, 8'hD1, 8'h99, 8'hA4, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 
+					 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz, 8'hzz};
+
+	ahb_master DUT_AHB_BLOCK
+	(
+		.HCLK(tb_HCLK), 
+		.HRESETn(tb_HRESETn), 
+		.HREADY(tb_HREADY), 
+		.read_enable(tb_read_enable), 
+		.write_enable(tb_write_enable), 
+		.length(tb_length), 
+		.width(tb_width), 
+		.source_addr(tb_source_addr), 
+		.dest_addr(tb_dest_addr), 
+		.HRDATA(tb_HRDATA), 
+		.sobel_result1(tb_sobel_result1), 
+		.sobel_result2(tb_sobel_result2), 
+		.HADDR(tb_HADDR), 
+		.pixel_out(tb_pixel_out), 
+		.HWDATA(tb_HWDATA), 
+		.HWRITE(tb_HWRITE), 
+		.transfer_data_complete_r(tb_transfer_data_complete_r), 
+		.transfer_data_complete_w(tb_transfer_data_complete_w), 
+		.shift_enable_r(tb_shift_enable_r)
+	);
+
+	// Generate Clock
+	always
+	begin
+		tb_HCLK = 1'b1;
+		#(CLK_PERIOD / 2);
+		tb_HCLK = 1'b0;
+		#(CLK_PERIOD / 2);
+	end
+
+	initial
+	begin
+		tb_HREADY = 0;
+		tb_read_enable = 0;
+		tb_write_enable = 0;
+		tb_length = 12;
+		tb_width = 5;
+		tb_source_addr = 0;
+		tb_dest_addr = 100;
+		tb_HRESETn = 1;
+		@(posedge tb_HCLK);
+		tb_HRESETn = 0;
+		@(posedge tb_HCLK);
+		tb_HRESETn = 1;
+		@(posedge tb_HCLK);
+		tb_HREADY = 1;
+		@(posedge tb_HCLK);
+		tb_read_enable = 1;
+		@(posedge tb_HCLK); // READY
+		@(posedge tb_HCLK); // READ_ADDR_1
+		$info("HRDATA[%0d:%0d] = {%0d, %0d, %0d, %0d}", tb_HADDR, tb_HADDR + 3, pixel_array[tb_HADDR], pixel_array[tb_HADDR + 1], pixel_array[tb_HADDR + 2], pixel_array[tb_HADDR + 3]);
+		tb_HRDATA = (pixel_array[tb_HADDR] << 24) | (pixel_array[tb_HADDR + 1] << 16) | (pixel_array[tb_HADDR + 2] << 8) | (pixel_array[tb_HADDR + 3]);
+		@(posedge tb_HCLK); // READ_DATA_1
+		@(posedge tb_HCLK); // SHIFT_1
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+
+		@(posedge tb_HCLK); // READ_ADDR_2
+		tb_HRDATA = (pixel_array[tb_HADDR] << 24) | (pixel_array[tb_HADDR + 1] << 16) | (pixel_array[tb_HADDR + 2] << 8) | (pixel_array[tb_HADDR + 3]);
+		@(posedge tb_HCLK); // READ_DATA_2
+		@(posedge tb_HCLK); // SHIFT_2
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+
+		@(posedge tb_HCLK); // READ_ADDR_3
+		tb_HRDATA = (pixel_array[tb_HADDR] << 24) | (pixel_array[tb_HADDR + 1] << 16) | (pixel_array[tb_HADDR + 2] << 8) | (pixel_array[tb_HADDR + 3]);
+		@(posedge tb_HCLK); // READ_DATA_3
+		@(posedge tb_HCLK); // SHIFT_3
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+
+		@(posedge tb_HCLK); // ADDR_UPDATE_R
+		@(posedge tb_HCLK); // IDLE
+		tb_read_enable = 0;
+		tb_write_enable = 1;
+		@(posedge tb_HCLK); // READY
+		tb_sobel_result1 = 8'h12;
+		tb_sobel_result2 = 8'h20;
+		@(posedge tb_HCLK); // WRITE_ADDR
+		$info("pixel_array[%0d:%0d] = {%0d, %0d}", tb_HADDR, tb_HADDR + 1, tb_HWDATA[15:8], tb_HWDATA[7:0]);
+		@(posedge tb_HCLK); // WRITE_DATA
+		@(posedge tb_HCLK); // SHIFT_W
+		@(posedge tb_HCLK); // ADDR_UPDATE_W
+
+		tb_sobel_result1 = 8'h89;
+		tb_sobel_result2 = 8'h10;
+		@(posedge tb_HCLK);
+		$info("pixel_array[%0d:%0d] = {%0d, %0d}", tb_HADDR, tb_HADDR + 1, tb_HWDATA[15:8], tb_HWDATA[7:0]);
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+		@(posedge tb_HCLK);
+
+
+
+		
+	end
+endmodule

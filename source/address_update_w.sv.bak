@@ -1,0 +1,53 @@
+// $Id: $
+// File name:   address_update_w.sv
+// Created:     4/13/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Address Update Register (WRITE)
+module address_update_w
+(
+	input wire HCLK, 
+	input wire HRESETn, 
+	input reg [15:0] length, 
+	input reg [15:0] width, 
+	input reg [31:0] addr, 
+	input wire addr_update_enable_w, 
+	input wire plus4_r, 
+	output reg [31:0] curr_addr
+);
+	reg [31:0] offset_w;
+	reg [31:0] next_offset_w;
+
+	always_ff @ (posedge HCLK, negedge HRESETn)
+	begin
+		if (HRESETn == 0)
+			offset_w <= 0;
+		else
+			offset_w <= next_offset_w;
+	end
+
+	always_comb
+	begin
+		if (!addr_update_enable_w || offset_w == length * width - 2) begin
+			next_offset_w = offset_w;
+			curr_addr = addr + offset_w;
+		end
+		else if (addr_update_enable_w) begin
+			if (plus4_r) begin
+				next_offset_w = offset_w + 1;
+				curr_addr = addr + offset_w;
+			end
+			else begin
+				next_offset_w = offset_w + 1;
+				curr_addr = addr + offset_w;
+			end
+		end
+		else begin
+			next_offset_w = offset_w;
+			curr_addr = addr + offset_w;
+		end
+
+
+	end
+endmodule

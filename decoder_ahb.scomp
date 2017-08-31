@@ -1,0 +1,9 @@
+QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+Start time: 20:43:12 on Apr 25,2017
+vlog -sv -work source_work source/decoder_ahb.sv 
+-- Compiling module decoder_ahb
+
+Top level modules:
+	decoder_ahb
+End time: 20:43:12 on Apr 25,2017, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

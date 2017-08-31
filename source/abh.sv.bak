@@ -1,0 +1,127 @@
+// $Id: $
+// File name:   abh.sv
+// Created:     3/21/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: AHB BLOCK
+module ahb
+(
+	input wire HCLK, 
+	input wire HRESETn, 
+	input reg [1:0] status, 
+	input reg [15:0] length, 
+	input reg [15:0] width, 
+	input reg [31:0] source_addr, 
+	input reg [31:0] dest_addr, 
+	input wire [31:0] HRDATA, 
+	output reg [31:0] start_addr, 
+	output wire [7:0] pixel_out, 
+	output reg [31:0] HWDATA
+);
+	wire transfer_addr_complete_r;
+	wire transfer_data_complete_r;
+	//wire shift_complete_r;
+	wire transfer_addr_complete_w;
+	wire transfer_data_complete_w;
+	wire end_of_image;
+	//wire shift_complete_w;
+	wire decode_size_enable;
+	wire addr_enable_r;
+	wire load_enable_r;
+	wire shift_enable_r;
+	wire addr_update_enable_r;
+	wire addr_enable_w;
+	wire shift_enable_w;
+	wire addr_update_enable_w;
+
+
+	reg [15:0] read_data;
+
+	reg [31:0] curr_addr_r;
+	reg [31:0] curr_addr_w;
+
+
+	controller_ahb AHB_CONTROLLER
+	(
+		.HCLK(HCLK), 
+		.HRESETn(HRESETn), 
+		.HREADY(HREADY), 
+		.status(status), 
+		.transfer_addr_complete_r(transfer_addr_complete_r), 
+		.transfer_data_complete_r(transfer_data_complete_r), 
+		.transfer_addr_complete_w(transfer_addr_complete_w), 
+		.transfer_data_complete_w(transfer_data_complete_w), 
+		.end_of_image, 
+		.decode_size_enable(decode_size_enable), 
+		.addr_enable_r(addr_enable_r), 
+		.load_enable_r(load_enable_r), 
+		.shift_enable_r(shift_enable_r), 
+		.addr_update_enable_r(addr_update_enable_r), 
+		.addr_enable_w(addr_enable_w), 
+		.shift_enable_w(shift_enable_w), 
+		.addr_update_enable_w(addr_update_enable_w)
+	);
+
+
+	always_comb
+	begin
+		if (status == 2'b11) begin
+			address_update_w ADDRESS_UPDATE_WRITE
+			(
+				.HCLK(HCLK), 
+				.HRESETn(HRESETn), 
+				.length(length), 
+				.width(width), 
+				.addr(dest_addr), 
+				.addr_update_enable_w(addr_update_enable_w), 
+				.curr_addr(curr_addr_w)
+			);
+
+			fifo_w WRITE_PIXEL_DATA
+			(
+				.HCLK(HCLK), 
+				.HRESETn(HRESETn), 
+				
+			);
+		end
+		else if (status == 2'b10) begin
+			address_update_r ADDRESS_UPDATE_READ
+			(
+				.HCLK(HCLK), 
+				.HRESETn(HRESETn), 
+				.length(length), 
+				.width(width), 
+				.addr(source_addr), 
+				.addr_update_enable_r(addr_update_enable_r), 
+				.curr_addr(curr_addr_r), 
+				.end_of_image(end_of_image)
+			);
+
+			get_address_r GET_STARTING_ADDRESS_READ
+			(
+				.HCLK(HCLK), 
+				.HRESETn(HRESETn), 
+				.addr_enable_r(addr_enable_r), 
+				.curr_addr(curr_addr_r), 
+				.length(length), 
+				.width(width), 
+				.start_addr_r(start_addr), 
+				.transfer_addr_complete_r(transfer_addr_complete_r)
+			);
+
+			fifo_r SEND_PIXEL_DATA
+			(
+				.HCLK(HCLK), 
+				.HRESETn(HRESETn), 
+				.shift_enable(shift_enable_r), 
+				.load_enable(load_enable_r), 
+				.read_data(read_data), 
+				.data_in(pixel_out), 
+				.transfer_data_complete_r(transfer_data_complete_r)
+			);
+		end
+
+	end
+	
+endmodule

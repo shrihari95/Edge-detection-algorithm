@@ -1,0 +1,37 @@
+// $Id: $
+// File name:   get_address_r.sv
+// Created:     3/22/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: GET ADDRESS (READ) of AHB
+module get_address_r
+(
+	input wire HCLK, 
+	input wire HRESETn, 
+	input wire addr_enable_r, 
+	input wire [31:0] curr_addr, 
+	input reg [15:0] length, 
+	input reg [15:0] width, 
+	output reg [31:0] start_addr_r, // The starting address of each row for each read
+	output reg transfer_addr_complete_r
+);
+	reg [31:0] row_count;
+	reg [31:0] next_row_count;
+	//wire row_change_en;
+
+	flex_counter#(32) ROW_COUNTER
+	(
+		.clk(HCLK), 
+		.n_rst(HRESETn), 
+		.count_enable(addr_enable_r), 
+		.rollover_val(2),
+		.count_out(row_count),  
+		.rollover_flag(transfer_addr_complete_r)
+	);
+
+	always_comb
+	begin
+		start_addr_r = curr_addr + length * row_count;
+	end
+endmodule

@@ -1,0 +1,15 @@
+// $Id: $
+// File name:   test_adder.sv
+// Created:     3/16/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Adder test
+module test_adder
+(
+	input wire signed [3:0] a, 
+	input wire signed [3:0] b, 
+	output wire signed [3:0] c
+);
+	assign c = a + b;
+endmodule

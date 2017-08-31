@@ -1,0 +1,88 @@
+// $Id: $
+// File name:   overall_edge_det.sv
+// Created:     4/13/2017
+// Author:      Shrihari Sridharan
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Overall module calling 
+
+
+module overall_edge_det
+(
+	input wire clk,
+	input wire n_rst,
+	input wire unsigned [11:0][7:0] data_buffer,
+	input wire shift_enable_r,
+        input wire transfer_data_complete_r,
+        input wire transfer_data_complete_w,
+	output byte final_out_1,
+	output byte final_out_2, 
+	output wire buffer_clear
+);
+
+    wire enable_calc;
+    reg [10:0]gx_out_1;
+    reg [10:0]gx_out_2;
+    reg [10:0]gy_out_1;
+    reg [10:0]gy_out_2;
+    wire buffer_clear;
+    
+    
+    
+mcu control(
+	.clk(clk),
+	.n_rst(n_rst),
+	.shift_enable_r(shift_enable_r),
+	.transfer_data_complete_r(transfer_data_complete_r),
+	.transfer_data_complete_w(transfer_data_complete_w),
+	.enable_calc(enable_calc), 
+	.buffer_clear(buffer_clear)
+);
+    
+
+gx_block_window1 gx1(
+    .clk(clk), 
+    .n_rst(n_rst), 
+    .data_buffer(data_buffer),
+    .enable_calc(enable_calc),
+    .gx_out_1(gx_out_1)
+);
+
+gx_block_window2 gx2(
+    .clk(clk), 
+    .n_rst(n_rst), 
+    .data_buffer(data_buffer),
+    .enable_calc(enable_calc),
+    .gx_out_2(gx_out_2)
+);
+
+gy_block_window1 gy1(
+    .clk(clk), 
+    .n_rst(n_rst), 
+    .data_buffer(data_buffer),
+    .enable_calc(enable_calc),
+    .gy_out_1(gy_out_1)
+);
+
+gy_block_window2 gy2(
+    .clk(clk), 
+    .n_rst(n_rst), 
+    .data_buffer(data_buffer),
+    .enable_calc(enable_calc),
+    .gy_out_2(gy_out_2)
+);
+
+result_1 res1(
+	.gx_out_1(gx_out_1),
+	.gy_out_1(gy_out_1),
+	.final_out_1(final_out_1)
+);
+
+
+result_2 res2(
+	.gx_out_2(gx_out_2),
+	.gy_out_2(gy_out_2),
+	.final_out_2(final_out_2)
+);
+
+endmodule

@@ -1,0 +1,75 @@
+# 
+# 
+# 
+# 
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps mapped_work/.tb_ahb_slave 
+# Start time: 18:50:40 on Apr 25,2017
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading sv_std.std
+# Loading work.tb_ahb_slave(fast)
+# Loading work.ahb_slave(fast)
+# Loading work.controller_ahb_slave(fast)
+# Loading work.decoder_ahb(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr(metastabilitywrapperarch)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.prim(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr_core(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.latch(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi22x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand3x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx8(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+do /home/ecegrid/a/mg131/ece337/test/wave_ahb_slave.do
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mg131  Hostname: ecegrid-thin7.ecn.purdue.edu  ProcessID: 14396
+#           Attempting to use alternate WLF file "./wlftgec0PE".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgec0PE
+run 400 ns
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 240660 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\length_reg[12] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 240660 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\width_reg[8] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 240800 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\length_reg[12] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 240800 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\width_reg[8] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 280660 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\length_reg[12] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 280660 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\width_reg[8] 
+# ** Warning: DFFSR instance metastable output value decayed to a '0' value
+#    Time: 280698 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\length_reg[12] 
+# ** Warning: DFFSR instance metastable output value decayed to a '0' value
+#    Time: 280698 ps  Iteration: 0  Instance: /tb_ahb_slave/DUT_AHB_SLAVE/AHB_SLAVE_DECODER/\width_reg[8] 
+# End time: 18:53:59 on Apr 25,2017, Elapsed time: 0:03:19
+# Errors: 4, Warnings: 10

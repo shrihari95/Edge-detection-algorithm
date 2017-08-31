@@ -1,0 +1,84 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work/.tb_four_8bits_to_32bits 
+# Start time: 21:55:10 on Mar 21,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_four_8bits_to_32bits(fast)
+# Loading work.four_8bits_to_32bits(fast)
+add wave *
+run 1000 ns
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 21:56:30 on Mar 21,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv 
+# -- Compiling module tb_four_8bits_to_32bits
+# 
+# Top level modules:
+# 	tb_four_8bits_to_32bits
+# End time: 21:56:30 on Mar 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_four_8bits_to_32bits(fast)
+# Loading work.four_8bits_to_32bits(fast)
+run 1000 ns
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 21:57:24 on Mar 21,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv 
+# -- Compiling module tb_four_8bits_to_32bits
+# 
+# Top level modules:
+# 	tb_four_8bits_to_32bits
+# End time: 21:57:24 on Mar 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_four_8bits_to_32bits(fast)
+# Loading work.four_8bits_to_32bits(fast)
+run 1000 ns
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 21:59:31 on Mar 21,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv 
+# -- Compiling module tb_four_8bits_to_32bits
+# 
+# Top level modules:
+# 	tb_four_8bits_to_32bits
+# End time: 21:59:31 on Mar 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_four_8bits_to_32bits(fast)
+# Loading work.four_8bits_to_32bits(fast)
+run 1000 ns
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 22:00:15 on Mar 21,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/tb_four_8bits_to_32bits.sv 
+# -- Compiling module tb_four_8bits_to_32bits
+# 
+# Top level modules:
+# 	tb_four_8bits_to_32bits
+# End time: 22:00:15 on Mar 21,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_four_8bits_to_32bits(fast)
+# Loading work.four_8bits_to_32bits(fast)
+run 1000 ns
+# End time: 22:01:07 on Mar 21,2017, Elapsed time: 0:05:57
+# Errors: 0, Warnings: 0

@@ -1,0 +1,50 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_top_level 
+# Start time: 16:31:41 on Apr 26,2017
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "controller_ahb(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "controller_ahb_slave(fast)".
+# ** Warning: source/address_update_r.sv(37): (vopt-2685) [TFMPC] - Too few port connections for 'COLUMN_COUNTER'.  Expected 7, found 6.
+# ** Warning: source/address_update_r.sv(37): (vopt-2718) [TFMPC] - Missing connection for port 'clear'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "mcu(fast)".
+# ** Warning: source/fifo_r.sv(46): (vopt-2685) [TFMPC] - Too few port connections for 'SHIFT_COUNTER_READ'.  Expected 7, found 5.
+# ** Warning: source/fifo_r.sv(46): (vopt-2718) [TFMPC] - Missing connection for port 'count_out'.
+# ** Warning: source/fifo_r.sv(46): (vopt-2718) [TFMPC] - Missing connection for port 'clear'.
+# ** Warning: source/get_address_r.sv(23): (vopt-2685) [TFMPC] - Too few port connections for 'ROW_COUNTER'.  Expected 7, found 6.
+# ** Warning: source/get_address_r.sv(23): (vopt-2718) [TFMPC] - Missing connection for port 'clear'.
+# Loading sv_std.std
+# Loading work.tb_top_level(fast)
+# Loading work.top_level(fast)
+# Loading work.ahb_slave(fast)
+# Loading work.controller_ahb_slave(fast)
+# Loading work.decoder_ahb(fast)
+# Loading work.ahb_master(fast)
+# Loading work.controller_ahb(fast)
+# Loading work.address_update_w(fast)
+# Loading work.fifo_w(fast)
+# Loading work.address_update_r(fast)
+# Loading work.flex_counter(fast)
+# Loading work.get_address_r(fast)
+# Loading work.fifo_r(fast)
+# Loading work.fill_in_buffer(fast)
+# Loading work.overall_edge_det(fast)
+# Loading work.mcu(fast)
+# Loading work.gx_block_window1(fast)
+# Loading work.gx_block_window2(fast)
+# Loading work.gy_block_window1(fast)
+# Loading work.gy_block_window2(fast)
+# Loading work.result_1(fast)
+# Loading work.result_2(fast)
+do wave_top_level_demo_1.do
+run 200 ms'
+# End time: 16:34:42 on Apr 26,2017, Elapsed time: 0:03:01
+# Errors: 0, Warnings: 7

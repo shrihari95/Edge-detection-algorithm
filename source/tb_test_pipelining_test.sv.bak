@@ -1,0 +1,56 @@
+// $Id: $
+// File name:   tb_test_pipelining_test.sv
+// Created:     3/31/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Test bench for testing pipelining
+`timescale 1ns / 10ps
+
+module tb_test_pipelining_test();
+	localparam CLK_PERIOD = 10;
+	reg tb_clk;
+	reg tb_n_rst;
+	reg tb_increment_enable;
+	reg tb_multiply_enable;
+	reg tb_a;
+	reg tb_b;
+	reg tb_e;
+
+	// Generate Clock
+	always
+	begin
+		tb_clk = 1'b0;
+		#(CLK_PERIOD / 2);
+		tb_clk = 1'b1;
+		#(CLK_PERIOD / 2);
+	end
+
+	initial
+	begin
+		tb_increment_enable = 0;
+		tb_multiply_enable = 0;
+		tb_a = 2;
+		tb_b = 4;
+		tb_n_rst = 1;
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		tb_n_rst = 0;
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		tb_n_rst = 1;
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		tb_increment_enable = 1;
+		@(posedge tb_clk);
+		//tb_increment_enable = 0;
+		//@(posedge tb_clk);
+		tb_multiply_enable = 1;
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+	end
+endmodule

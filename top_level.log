@@ -1,0 +1,1909 @@
+Synthesizing design: top_level.sv
+dc_shell-t -x "source -echo do_mapping.tcl"
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+               Version K-2015.06-SP1 for linux64 - Jul 21, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ecegrid/a/mg131/.synopsys_dv_prefs.tcl
+# Step 1:  Read in the source file
+analyze -format sverilog -lib WORK {ahb_master.sv ahb_slave.sv fill_in_buffer.sv overall_edge_det.sv flex_counter.sv flex_counter2.sv controller_ahb.sv address_update_r.sv get_address_r.sv fifo_r.sv address_update_w.sv fifo_w.sv controller_ahb_slave.sv decoder_ahb.sv mcu.sv gx_block_window1.sv gx_block_window2.sv gy_block_window1.sv gy_block_window2.sv result_1.sv result_2.sv top_level.sv}
+Running PRESTO HDLC
+Compiling source file ./source/ahb_master.sv
+Compiling source file ./source/ahb_slave.sv
+Compiling source file ./source/fill_in_buffer.sv
+Compiling source file ./source/overall_edge_det.sv
+Compiling source file ./source/flex_counter.sv
+Compiling source file ./source/flex_counter2.sv
+Compiling source file ./source/controller_ahb.sv
+Compiling source file ./source/address_update_r.sv
+Compiling source file ./source/get_address_r.sv
+Compiling source file ./source/fifo_r.sv
+Compiling source file ./source/address_update_w.sv
+Compiling source file ./source/fifo_w.sv
+Compiling source file ./source/controller_ahb_slave.sv
+Compiling source file ./source/decoder_ahb.sv
+Compiling source file ./source/mcu.sv
+Compiling source file ./source/gx_block_window1.sv
+Compiling source file ./source/gx_block_window2.sv
+Compiling source file ./source/gy_block_window1.sv
+Compiling source file ./source/gy_block_window2.sv
+Compiling source file ./source/result_1.sv
+Compiling source file ./source/result_2.sv
+Compiling source file ./source/top_level.sv
+Presto compilation completed successfully.
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/dw_foundation.sldb'
+elaborate top_level -lib WORK
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'osu05_stdcells'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'top_level'.
+Information: Building the design 'ahb_slave'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ahb_master'. (HDL-193)
+
+Inferred tri-state devices in process
+	in routine ahb_master line 71 in file
+		'./source/ahb_master.sv'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  HWRITE_tri   | Tri-State Buffer |   1   | N  |
+|   HADDR_tri   | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Information: Building the design 'fill_in_buffer'. (HDL-193)
+Warning:  ./source/fill_in_buffer.sv:57: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine fill_in_buffer line 39 in file
+		'./source/fill_in_buffer.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  buffer_empty_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|   data_buffer_reg   | Flip-flop |  96   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'overall_edge_det'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'controller_ahb_slave'. (HDL-193)
+
+Statistics for case statements in always block at line 32 in file
+	'./source/controller_ahb_slave.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            35            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 80 in file
+	'./source/controller_ahb_slave.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            83            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine controller_ahb_slave line 24 in file
+		'./source/controller_ahb_slave.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'decoder_ahb'. (HDL-193)
+
+Inferred memory devices in process
+	in routine decoder_ahb line 27 in file
+		'./source/decoder_ahb.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    dest_addr_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     length_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      width_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   source_addr_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'controller_ahb'. (HDL-193)
+
+Statistics for case statements in always block at line 41 in file
+	'./source/controller_ahb.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            44            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine controller_ahb line 33 in file
+		'./source/controller_ahb.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'address_update_w'. (HDL-193)
+
+Inferred memory devices in process
+	in routine address_update_w line 22 in file
+		'./source/address_update_w.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    offset_w_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'fifo_w'. (HDL-193)
+
+Inferred memory devices in process
+	in routine fifo_w line 19 in file
+		'./source/fifo_w.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     HWDATA_reg      | Flip-flop |  16   |  Y  | N  | N  | Y  | N  | N  | N  |
+|     HWDATA_reg      | Flip-flop |  16   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'address_update_r'. (HDL-193)
+
+Inferred memory devices in process
+	in routine address_update_r line 49 in file
+		'./source/address_update_r.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    row_count_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    offset_r_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Warning:  ./source/address_update_r.sv:30: Netlist for always_comb block is empty. (ELAB-982)
+Presto compilation completed successfully.
+Information: Building the design 'get_address_r'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'fifo_r'. (HDL-193)
+Warning:  ./source/fifo_r.sv:32: unsigned to signed assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine fifo_r line 21 in file
+		'./source/fifo_r.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    array_out_reg    | Flip-flop |  32   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'flex_counter' instantiated from design 'fill_in_buffer' with
+	the parameters "32". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_counter_NUM_CNT_BITS32 line 23 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    count_out_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine flex_counter_NUM_CNT_BITS32 line 31 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  rollover_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mcu'. (HDL-193)
+
+Statistics for case statements in always block at line 33 in file
+	'./source/mcu.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            36            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine mcu line 24 in file
+		'./source/mcu.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'gx_block_window1'. (HDL-193)
+
+Inferred memory devices in process
+	in routine gx_block_window1 line 34 in file
+		'./source/gx_block_window1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    gx_out_1_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'gx_block_window2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine gx_block_window2 line 36 in file
+		'./source/gx_block_window2.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    gx_out_2_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'gy_block_window1'. (HDL-193)
+
+Inferred memory devices in process
+	in routine gy_block_window1 line 34 in file
+		'./source/gy_block_window1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    gy_out_1_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'gy_block_window2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine gy_block_window2 line 33 in file
+		'./source/gy_block_window2.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    gy_out_2_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'result_1'. (HDL-193)
+Warning:  ./source/result_1.sv:28: unsigned to signed assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Information: Building the design 'result_2'. (HDL-193)
+Warning:  ./source/result_2.sv:29: unsigned to signed assignment occurs. (VER-318)
+Presto compilation completed successfully.
+uniquify
+Information: Uniquified 4 instances of design 'flex_counter_NUM_CNT_BITS32'. (OPT-1056)
+# Step 2: Set design constraints
+# Uncomment below to set timing, area, power, etc. constraints
+# set_max_delay <delay> -from "<input>" -to "<output>"
+# set_max_area <area>
+# set_max_total_power <power> mW
+create_clock "clk" -name "clk" -period 40
+# Step 3: Compile the design
+compile -map_effort medium
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.1 |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.1 |     *     |
+============================================================================
+
+
+Information: There are 389 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'result_2'
+  Processing 'result_1'
+  Processing 'gy_block_window2'
+  Processing 'gy_block_window1'
+  Processing 'gx_block_window2'
+  Processing 'gx_block_window1'
+  Processing 'mcu'
+Information: The register 'state_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'state_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'state_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'overall_edge_det'
+  Processing 'flex_counter_NUM_CNT_BITS32_3'
+Information: Added key list 'DesignWare' to design 'flex_counter_NUM_CNT_BITS32_3'. (DDB-72)
+  Processing 'fill_in_buffer'
+Information: The register 'buffer_empty_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'fifo_r'
+  Processing 'get_address_r'
+  Processing 'address_update_r'
+Information: Added key list 'DesignWare' to design 'address_update_r'. (DDB-72)
+  Processing 'fifo_w'
+Information: The register 'HWDATA_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'HWDATA_reg[16]' is a constant and will be removed. (OPT-1206)
+  Processing 'address_update_w'
+Information: Added key list 'DesignWare' to design 'address_update_w'. (DDB-72)
+  Processing 'controller_ahb'
+  Processing 'ahb_master'
+  Processing 'decoder_ahb'
+  Processing 'controller_ahb_slave'
+  Processing 'ahb_slave'
+  Processing 'top_level'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Mapping 'result_2_DW_cmp_0'
+  Processing 'result_2_DW01_add_0'
+  Processing 'result_2_DW01_sub_0'
+  Processing 'result_2_DW01_sub_1'
+  Mapping 'result_1_DW_cmp_0'
+  Processing 'result_1_DW01_add_0'
+  Processing 'result_1_DW01_sub_0'
+  Processing 'result_1_DW01_sub_1'
+  Processing 'flex_counter_NUM_CNT_BITS32_3_DW01_dec_0'
+  Processing 'flex_counter_NUM_CNT_BITS32_3_DW01_inc_0'
+  Processing 'flex_counter_NUM_CNT_BITS32_0_DW01_dec_0'
+  Processing 'flex_counter_NUM_CNT_BITS32_0_DW01_inc_0'
+  Processing 'flex_counter_NUM_CNT_BITS32_1_DW01_dec_0'
+  Processing 'flex_counter_NUM_CNT_BITS32_1_DW01_inc_0'
+  Mapping 'address_update_r_DW_cmp_0'
+  Processing 'address_update_r_DW01_add_0'
+  Processing 'address_update_r_DW01_inc_0'
+  Processing 'address_update_r_DW01_add_1'
+  Mapping 'address_update_r_DW_cmp_1'
+  Processing 'address_update_r_DW01_inc_1'
+  Processing 'address_update_r_DW01_sub_0'
+  Processing 'address_update_r_DW01_sub_1'
+  Processing 'flex_counter_NUM_CNT_BITS32_2_DW01_dec_0'
+  Processing 'flex_counter_NUM_CNT_BITS32_2_DW01_inc_0'
+  Processing 'address_update_w_DW01_inc_0'
+  Processing 'address_update_w_DW01_add_0'
+  Processing 'address_update_w_DW01_add_1'
+  Processing 'gy_block_window2_DW01_add_0'
+  Processing 'gy_block_window2_DW01_add_1'
+  Processing 'gy_block_window2_DW01_add_2'
+  Processing 'gy_block_window2_DW01_sub_0'
+  Processing 'gy_block_window2_DW01_sub_1'
+  Processing 'gy_block_window2_DW01_sub_2'
+  Processing 'gx_block_window2_DW01_add_0'
+  Processing 'gx_block_window2_DW01_sub_0'
+  Processing 'gx_block_window2_DW01_add_1'
+  Processing 'gx_block_window2_DW01_add_2'
+  Processing 'gx_block_window2_DW01_sub_1'
+  Processing 'gx_block_window2_DW01_add_3'
+  Processing 'gx_block_window2_DW01_sub_2'
+  Processing 'gy_block_window1_DW01_add_0'
+  Processing 'gy_block_window1_DW01_sub_0'
+  Processing 'gy_block_window1_DW01_add_1'
+  Processing 'gy_block_window1_DW01_add_2'
+  Processing 'gy_block_window1_DW01_sub_1'
+  Processing 'gy_block_window1_DW01_add_3'
+  Processing 'gy_block_window1_DW01_sub_2'
+  Processing 'gx_block_window1_DW01_add_0'
+  Processing 'gx_block_window1_DW01_add_1'
+  Processing 'gx_block_window1_DW01_add_2'
+  Processing 'gx_block_window1_DW01_sub_0'
+  Processing 'gx_block_window1_DW01_sub_1'
+  Processing 'gx_block_window1_DW01_sub_2'
+  Processing 'gx_block_window1_DW01_sub_3'
+  Processing 'address_update_w_DW01_sub_0'
+  Mapping 'address_update_w_DW_mult_uns_0'
+  Processing 'address_update_r_DW01_add_2'
+  Mapping 'address_update_r_DW_mult_uns_0'
+  Processing 'address_update_r_DW01_add_3'
+  Mapping 'address_update_r_DW_mult_uns_1'
+  Processing 'address_update_r_DW01_sub_2'
+  Processing 'get_address_r_DW01_add_0'
+  Mapping 'get_address_r_DW_mult_uns_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'result_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'result_1'. (DDB-72)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09 3855519.0      0.00       0.0       7.3                          
+    0:00:09 3855519.0      0.00       0.0       7.3                          
+    0:00:09 3855519.0      0.00       0.0       7.3                          
+    0:00:09 3855519.0      0.00       0.0       7.3                          
+    0:00:10 3855519.0      0.00       0.0       7.3                          
+    0:00:10 3715479.0      0.00       0.0       4.5                          
+    0:00:10 3715479.0      0.00       0.0       4.5                          
+    0:00:10 3715479.0      0.00       0.0       4.5                          
+    0:00:10 3715479.0      0.00       0.0       4.5                          
+    0:00:10 3715479.0      0.00       0.0       4.5                          
+    0:00:10 3718215.0      0.00       0.0       1.2                          
+    0:00:10 3720591.0      0.00       0.0       0.0                          
+    0:00:10 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3720591.0      0.00       0.0       0.0                          
+    0:00:11 3698271.0      0.00       0.0       0.0                          
+    0:00:12 3685167.0      0.00       0.0       0.0                          
+    0:00:12 3678183.0      0.00       0.0       0.0                          
+    0:00:12 3675879.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+    0:00:12 3674655.0      0.00       0.0       0.0                          
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+# Step 4: Output reports
+report_timing -path full -delay max -max_paths 1 -nworst 1 > reports/top_level.rep
+report_area >> reports/top_level.rep
+report_power -hier >> reports/top_level.rep
+# Step 5: Output final VHDL and Verilog files
+write_file -format verilog -hierarchy -output "mapped/top_level.v"
+Writing verilog file '/home/ecegrid/a/mg131/ece337/test/mapped/top_level.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 35 nets to module address_update_r using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module get_address_r using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module ahb_master using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 2 nets to module gx_block_window2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 2 nets to module gy_block_window1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module top_level using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+echo "\nScript Done\n"
+
+Script Done
+
+echo "\nChecking Design\n"
+
+Checking Design
+
+check_design
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP1
+Date:        Tue Apr 25 20:39:24 2017
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    619
+    Unconnected ports (LINT-28)                                   540
+    Feedthrough (LINT-29)                                           3
+    Shorted outputs (LINT-31)                                      26
+    Constant outputs (LINT-52)                                     50
+
+Cells                                                             370
+    Connected to power or ground (LINT-32)                        305
+    Nets connected to multiple pins on same cell (LINT-33)         65
+--------------------------------------------------------------------------------
+
+Warning: In design 'controller_ahb', port 'transfer_addr_complete_r' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_ahb', port 'transfer_addr_complete_w' is not connected to any nets. (LINT-28)
+Warning: In design 'controller_ahb', port 'transfer_data_complete_w' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r', port 'width[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'mcu', port 'transfer_data_complete_w' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[11][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[9][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[7][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[5][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[3][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1', port 'data_buffer[1][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[10][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[8][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[6][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[4][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[2][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2', port 'data_buffer[0][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[11][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[7][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[6][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[5][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[4][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1', port 'data_buffer[3][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[8][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[7][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[6][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[5][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[4][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][7]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][6]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][5]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][4]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][3]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][2]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][1]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2', port 'data_buffer[0][0]' is not connected to any nets. (LINT-28)
+Warning: In design 'result_2_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'result_2_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'result_1_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'result_1_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_0', port 'GE_LT' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_0', port 'GE_GT_EQ' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_0', port 'EQ_NE' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'A[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'A[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'SUM[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'SUM[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_1', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_1', port 'GE_LT' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_1', port 'GE_GT_EQ' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_cmp_1', port 'EQ_NE' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_0', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_1', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_1', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_2', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window2_DW01_sub_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_0', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'SUM[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_1', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_1', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'SUM[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_2', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window2_DW01_sub_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_0', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'SUM[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_1', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_1', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'SUM[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_2', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gy_block_window1_DW01_sub_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_0', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_1', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_1', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_2', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_2', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_3', port 'A[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_3', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_3', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_3', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'gx_block_window1_DW01_sub_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'b[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_0', port 'product[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'b[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_r_DW_mult_uns_1', port 'product[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'get_address_r_DW_mult_uns_0', port 'product[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'address_update_w_DW01_add_0', input port 'A[1]' is connected directly to output port 'SUM[1]'. (LINT-29)
+Warning: In design 'address_update_w_DW01_add_0', input port 'A[0]' is connected directly to output port 'SUM[0]'. (LINT-29)
+Warning: In design 'address_update_w_DW01_sub_0', input port 'A[0]' is connected directly to output port 'DIFF[0]'. (LINT-29)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[30]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[29]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[28]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[27]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[26]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[25]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[24]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[23]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[22]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[21]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[20]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[19]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[18]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[17]'. (LINT-31)
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to output port 'HWDATA_M[16]'. (LINT-31)
+Warning: In design 'gy_block_window2_DW01_sub_0', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gy_block_window2_DW01_sub_1', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gy_block_window2_DW01_sub_2', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gx_block_window2_DW01_sub_1', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gx_block_window2_DW01_sub_2', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gy_block_window1_DW01_sub_1', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gy_block_window1_DW01_sub_2', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gx_block_window1_DW01_sub_0', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gx_block_window1_DW01_sub_1', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gx_block_window1_DW01_sub_2', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'gx_block_window1_DW01_sub_3', output port 'DIFF[9]' is connected directly to output port 'DIFF[8]'. (LINT-31)
+Warning: In design 'top_level', a pin on submodule 'EDGE_DETECTION_MODULE' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'transfer_data_complete_w' is connected to logic 0. 
+Warning: In design 'ahb_master', a pin on submodule 'AHB_CONTROLLER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'transfer_addr_complete_w' is connected to logic 0. 
+Warning: In design 'ahb_master', a pin on submodule 'AHB_CONTROLLER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'transfer_data_complete_w' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[31]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[30]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[29]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[28]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[27]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[26]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[25]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[24]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[23]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[22]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[21]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[20]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[19]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[18]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[17]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[16]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[15]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[14]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[13]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[12]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[11]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[10]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[9]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[8]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[7]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[6]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[5]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[4]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 1. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', a pin on submodule 'PIXEL_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[31]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[30]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[29]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[28]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[27]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[26]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[25]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[24]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[23]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[22]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[21]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[20]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[19]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[18]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[17]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[7]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 1. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'add_38' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'r312' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[31]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[30]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[29]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[28]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[27]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[26]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[25]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[24]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[23]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[22]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[21]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[20]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[19]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[18]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[17]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[7]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 1. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'address_update_w', a pin on submodule 'sub_32' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'COLUMN_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clear' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'gte_83' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'gte_83' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'GE_LT' is connected to logic 1. 
+Warning: In design 'address_update_r', a pin on submodule 'gte_83' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'GE_GT_EQ' is connected to logic 1. 
+Warning: In design 'address_update_r', a pin on submodule 'add_81' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[31]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[30]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[29]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[28]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[27]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[26]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[25]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[24]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[23]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[22]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[21]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[20]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[19]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[18]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[17]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[7]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 1. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_74' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'gte_69' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'gte_69' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'GE_LT' is connected to logic 1. 
+Warning: In design 'address_update_r', a pin on submodule 'gte_69' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'GE_GT_EQ' is connected to logic 1. 
+Warning: In design 'address_update_r', a pin on submodule 'add_69' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'address_update_r', a pin on submodule 'add_83' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clear' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[31]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[30]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[29]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[28]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[27]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[26]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[25]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[24]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[23]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[22]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[21]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[20]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[19]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[18]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[17]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[16]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[15]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[14]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[13]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[12]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[11]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[10]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[9]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[8]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[7]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[6]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[5]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[4]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 1. 
+Warning: In design 'get_address_r', a pin on submodule 'ROW_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'get_address_r', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clear' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[31]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[30]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[29]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[28]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[27]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[26]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[25]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[24]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[23]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[22]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[21]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[20]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[19]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[18]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[17]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[16]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[15]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[14]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[13]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[12]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[11]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[10]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[9]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[8]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[7]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[6]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[5]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[4]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 1. 
+Warning: In design 'fifo_r', a pin on submodule 'SHIFT_COUNTER_READ' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 1. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'add_0_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'add_0_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window1', a pin on submodule 'add_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_2_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_2_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_2_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_2_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_2_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_1_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_1_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_1_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_1_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_1_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_0_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_0_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_0_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'sub_0_root_sub_0_root_sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gx_block_window2', a pin on submodule 'add_53' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_2_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_2_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_1_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_1_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_0_root_sub_0_root_sub_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_0_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_0_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'sub_0_root_sub_0_root_sub_51' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window1', a pin on submodule 'add_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'r939' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'r939' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'r939' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'r939' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'r939' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_48' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_48' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_48' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_48' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_48' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'sub_2_root_sub_0_root_sub_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'add_0_root_sub_0_root_sub_48' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'add_0_root_sub_0_root_sub_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'gy_block_window2', a pin on submodule 'add_50' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'result_1', a pin on submodule 'add_24' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'result_2', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'fill_in_buffer', the same net is connected to more than one pin on submodule 'PIXEL_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[31]', 'rollover_val[30]'', 'rollover_val[29]', 'rollover_val[28]', 'rollover_val[27]', 'rollover_val[26]', 'rollover_val[25]', 'rollover_val[24]', 'rollover_val[23]', 'rollover_val[22]', 'rollover_val[21]', 'rollover_val[20]', 'rollover_val[19]', 'rollover_val[18]', 'rollover_val[17]', 'rollover_val[16]', 'rollover_val[15]', 'rollover_val[14]', 'rollover_val[13]', 'rollover_val[12]', 'rollover_val[11]', 'rollover_val[10]', 'rollover_val[9]', 'rollover_val[8]', 'rollover_val[7]', 'rollover_val[6]', 'rollover_val[5]', 'rollover_val[4]', 'rollover_val[1]', 'rollover_val[0]'.
+Warning: In design 'fill_in_buffer', the same net is connected to more than one pin on submodule 'PIXEL_COUNTER'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[3]', 'rollover_val[2]''.
+Warning: In design 'address_update_w', the same net is connected to more than one pin on submodule 'add_38'. (LINT-33)
+   Net 'n1' is connected to pins 'B[31]', 'B[30]'', 'B[29]', 'B[28]', 'B[27]', 'B[26]', 'B[25]', 'B[24]', 'B[23]', 'B[22]', 'B[21]', 'B[20]', 'B[19]', 'B[18]', 'B[17]', 'B[16]', 'B[15]', 'B[14]', 'B[13]', 'B[12]', 'B[11]', 'B[10]', 'B[9]', 'B[8]', 'B[7]', 'B[6]', 'B[5]', 'B[4]', 'B[3]', 'CI'.
+Warning: In design 'address_update_w', the same net is connected to more than one pin on submodule 'add_38'. (LINT-33)
+   Net 'n200' is connected to pins 'B[1]', 'B[0]''.
+Warning: In design 'address_update_w', the same net is connected to more than one pin on submodule 'sub_32'. (LINT-33)
+   Net 'n79' is connected to pins 'B[31]', 'B[30]'', 'B[29]', 'B[28]', 'B[27]', 'B[26]', 'B[25]', 'B[24]', 'B[23]', 'B[22]', 'B[21]', 'B[20]', 'B[19]', 'B[18]', 'B[17]', 'B[16]', 'B[15]', 'B[14]', 'B[13]', 'B[12]', 'B[11]', 'B[10]', 'B[9]', 'B[8]', 'B[7]', 'B[6]', 'B[5]', 'B[4]', 'B[3]', 'B[2]', 'B[0]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'COLUMN_COUNTER'. (LINT-33)
+   Net 'n69' is connected to pins 'rollover_val[31]', 'rollover_val[21]'', 'rollover_val[19]', 'rollover_val[17]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'COLUMN_COUNTER'. (LINT-33)
+   Net 'n61' is connected to pins 'rollover_val[30]', 'rollover_val[29]'', 'rollover_val[27]', 'rollover_val[25]', 'rollover_val[23]', 'rollover_val[22]', 'rollover_val[20]', 'rollover_val[18]', 'rollover_val[16]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'COLUMN_COUNTER'. (LINT-33)
+   Net 'n12' is connected to pins 'rollover_val[26]', 'rollover_val[24]''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'gte_83'. (LINT-33)
+   Net 'n2' is connected to pins 'GE_LT', 'GE_GT_EQ''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_74'. (LINT-33)
+   Net 'n4' is connected to pins 'B[31]', 'B[30]'', 'B[29]', 'B[28]', 'B[27]', 'B[26]', 'B[25]', 'B[24]', 'B[23]', 'B[22]', 'B[21]', 'B[20]', 'B[19]', 'B[18]', 'B[17]', 'B[16]', 'B[15]', 'B[14]', 'B[13]', 'B[12]', 'B[11]', 'B[10]', 'B[9]', 'B[8]', 'B[7]', 'B[6]', 'B[5]', 'B[4]', 'B[3]', 'CI'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_74'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'B[1]', 'B[0]''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'gte_69'. (LINT-33)
+   Net 'n6' is connected to pins 'GE_LT', 'GE_GT_EQ''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'mult_69'. (LINT-33)
+   Net 'n10' is connected to pins 'b[31]', 'b[30]'', 'b[29]', 'b[28]', 'b[27]', 'b[26]', 'b[25]', 'b[24]', 'b[23]', 'b[22]', 'b[21]', 'b[20]', 'b[19]', 'b[18]', 'b[17]', 'b[16]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'n18' is connected to pins 'B[31]', 'B[28]''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'n19' is connected to pins 'B[30]', 'B[27]''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'n14' is connected to pins 'B[26]', 'B[21]'', 'B[18]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'n15' is connected to pins 'B[25]', 'B[23]'', 'B[20]', 'B[17]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'n16' is connected to pins 'B[24]', 'B[22]'', 'B[19]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'mult_83'. (LINT-33)
+   Net 'n25' is connected to pins 'b[31]', 'b[30]'', 'b[29]', 'b[28]', 'b[27]', 'b[26]', 'b[25]', 'b[24]', 'b[23]', 'b[22]', 'b[21]', 'b[20]', 'b[19]', 'b[18]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'mult_83'. (LINT-33)
+   Net 'n24' is connected to pins 'b[17]', 'b[16]''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_83'. (LINT-33)
+   Net 'n69' is connected to pins 'B[29]', 'B[27]'', 'B[25]', 'B[22]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_83'. (LINT-33)
+   Net 'n18' is connected to pins 'B[28]', 'B[26]'', 'B[24]', 'B[23]', 'B[21]', 'B[18]'.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_83'. (LINT-33)
+   Net 'n19' is connected to pins 'B[20]', 'B[17]''.
+Warning: In design 'address_update_r', the same net is connected to more than one pin on submodule 'add_83'. (LINT-33)
+   Net 'n20' is connected to pins 'B[19]', 'B[16]''.
+Warning: In design 'get_address_r', the same net is connected to more than one pin on submodule 'ROW_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[31]', 'rollover_val[30]'', 'rollover_val[29]', 'rollover_val[28]', 'rollover_val[27]', 'rollover_val[26]', 'rollover_val[25]', 'rollover_val[24]', 'rollover_val[23]', 'rollover_val[22]', 'rollover_val[21]', 'rollover_val[20]', 'rollover_val[19]', 'rollover_val[18]', 'rollover_val[17]', 'rollover_val[16]', 'rollover_val[15]', 'rollover_val[14]', 'rollover_val[13]', 'rollover_val[12]', 'rollover_val[11]', 'rollover_val[10]', 'rollover_val[9]', 'rollover_val[8]', 'rollover_val[7]', 'rollover_val[6]', 'rollover_val[5]', 'rollover_val[4]', 'rollover_val[3]', 'rollover_val[2]', 'rollover_val[0]'.
+Warning: In design 'fifo_r', the same net is connected to more than one pin on submodule 'SHIFT_COUNTER_READ'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[31]', 'rollover_val[30]'', 'rollover_val[29]', 'rollover_val[28]', 'rollover_val[27]', 'rollover_val[26]', 'rollover_val[25]', 'rollover_val[24]', 'rollover_val[23]', 'rollover_val[22]', 'rollover_val[21]', 'rollover_val[20]', 'rollover_val[19]', 'rollover_val[18]', 'rollover_val[17]', 'rollover_val[16]', 'rollover_val[15]', 'rollover_val[14]', 'rollover_val[13]', 'rollover_val[12]', 'rollover_val[11]', 'rollover_val[10]', 'rollover_val[9]', 'rollover_val[8]', 'rollover_val[7]', 'rollover_val[6]', 'rollover_val[5]', 'rollover_val[4]', 'rollover_val[3]', 'rollover_val[2]'.
+Warning: In design 'fifo_r', the same net is connected to more than one pin on submodule 'SHIFT_COUNTER_READ'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[1]', 'rollover_val[0]''.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n78' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n79' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n80' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n81' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'add_52'. (LINT-33)
+   Net 'N45' is connected to pins 'A[10]', 'A[9]''.
+Warning: In design 'gx_block_window1', the same net is connected to more than one pin on submodule 'add_52'. (LINT-33)
+   Net 'N55' is connected to pins 'B[10]', 'B[9]''.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n78' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'add_2_root_sub_0_root_sub_52'. (LINT-33)
+   Net 'n79' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'add_2_root_sub_0_root_sub_52'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n80' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'add_1_root_sub_0_root_sub_52'. (LINT-33)
+   Net 'n81' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'add_1_root_sub_0_root_sub_52'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'add_53'. (LINT-33)
+   Net 'N45' is connected to pins 'A[10]', 'A[9]''.
+Warning: In design 'gx_block_window2', the same net is connected to more than one pin on submodule 'add_53'. (LINT-33)
+   Net 'N55' is connected to pins 'B[10]', 'B[9]''.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n78' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'add_2_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n79' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'add_2_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n80' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'sub_1_root_sub_0_root_sub_50'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'add_1_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n81' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'add_1_root_sub_0_root_sub_51'. (LINT-33)
+   Net 'n77' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'add_52'. (LINT-33)
+   Net 'N45' is connected to pins 'A[10]', 'A[9]''.
+Warning: In design 'gy_block_window1', the same net is connected to more than one pin on submodule 'add_52'. (LINT-33)
+   Net 'N55' is connected to pins 'B[10]', 'B[9]''.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'r939'. (LINT-33)
+   Net 'n68' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'r939'. (LINT-33)
+   Net 'n67' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_48'. (LINT-33)
+   Net 'n69' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_48'. (LINT-33)
+   Net 'n67' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_49'. (LINT-33)
+   Net 'n70' is connected to pins 'A[9]', 'B[9]'', 'CI'.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'sub_2_root_sub_0_root_sub_49'. (LINT-33)
+   Net 'n67' is connected to pins 'A[8]', 'B[8]''.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'add_50'. (LINT-33)
+   Net 'N45' is connected to pins 'A[10]', 'A[9]''.
+Warning: In design 'gy_block_window2', the same net is connected to more than one pin on submodule 'add_50'. (LINT-33)
+   Net 'N55' is connected to pins 'B[10]', 'B[9]''.
+Warning: In design 'top_level', output port 'HWDATA_M[31]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[30]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[29]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[28]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[27]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[26]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[25]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[24]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[23]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[22]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[21]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[20]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[19]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[18]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[17]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'top_level', output port 'HWDATA_M[16]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[31]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[30]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[29]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[28]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[27]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[26]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[25]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[24]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[23]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[22]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[21]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[20]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[19]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[18]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[17]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'HWDATA[16]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'ahb_master', output port 'transfer_data_complete_w' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fill_in_buffer', output port 'buffer_empty' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[31]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[30]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[29]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[28]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[27]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[26]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[25]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[24]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[23]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[22]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[21]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[20]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[19]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[18]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[17]' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'fifo_w', output port 'HWDATA[16]' is connected directly to 'logic 1'. (LINT-52)
+quit
+
+Thank you...
+Done
+
+

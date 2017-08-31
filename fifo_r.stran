@@ -1,0 +1,103 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work/.tb_fifo_r 
+# Start time: 11:42:17 on Apr 17,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: source/fifo_r.sv(45): (vopt-2685) [TFMPC] - Too few port connections for 'SHIFT_COUNTER'.  Expected 7, found 5.
+# ** Warning: source/fifo_r.sv(45): (vopt-2718) [TFMPC] - Missing connection for port 'count_out'.
+# ** Warning: source/fifo_r.sv(45): (vopt-2718) [TFMPC] - Missing connection for port 'clear'.
+# Loading sv_std.std
+# Loading work.tb_fifo_r(fast)
+# Loading work.fifo_r(fast)
+# Loading work.flex_counter(fast)
+do /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_HCLK'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 3
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_HRESETn'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 4
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_HREADY'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 5
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_status'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 6
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_length'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 7
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_width'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 8
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_source_addr'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 9
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_dest_addr'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 10
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_HRDATA'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 11
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_sobel_result'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 12
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_start_addr'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 13
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_pixel_out'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 14
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/tb_HWDATA'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 15
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/status'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 18
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/length'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 19
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/width'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 20
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/source_addr'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 21
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/dest_addr'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 22
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/HRDATA'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 23
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/sobel_result'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 24
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/start_addr'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 25
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/pixel_out'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 26
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/HWDATA'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 27
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/transfer_addr_complete_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 28
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/transfer_data_complete_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 29
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/transfer_addr_complete_w'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 30
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/transfer_data_complete_w'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 31
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/end_of_image'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 32
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/addr_enable_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 33
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/load_enable_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 34
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/shift_enable_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 35
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/addr_update_enable_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 36
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/addr_enable_w'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 37
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/shift_enable_w'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 38
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/addr_update_enable_w'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 39
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/curr_addr_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 40
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/curr_addr_w'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 41
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/HREADY'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 42
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/AHB_CONTROLLER/state'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 43
+# ** Error: (vish-4014) No objects found matching '/tb_ahb_master/DUT_AHB_BLOCK/AHB_CONTROLLER/next_state'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_ahb_master.do line 44
+# End time: 11:42:33 on Apr 17,2017, Elapsed time: 0:00:16
+# Errors: 120, Warnings: 3

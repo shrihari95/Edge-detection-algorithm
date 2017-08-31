@@ -1,0 +1,88 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps mapped_work.tb_address_update_r 
+# Start time: 14:31:32 on Apr 16,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: mapped/address_update_r.v(2919): (vopt-2685) [TFMPC] - Too few port connections for 'COLUMN_COUNTER'.  Expected 7, found 6.
+# ** Warning: mapped/address_update_r.v(2919): (vopt-2718) [TFMPC] - Missing connection for port 'count_out'.
+# ** Warning: mapped/address_update_r.v(2926): (vopt-2685) [TFMPC] - Too few port connections for 'r403'.  Expected 5, found 4.
+# ** Warning: mapped/address_update_r.v(2926): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/address_update_r.v(2933): (vopt-2685) [TFMPC] - Too few port connections for 'gte_84'.  Expected 6, found 5.
+# ** Warning: mapped/address_update_r.v(2933): (vopt-2718) [TFMPC] - Missing connection for port 'GE_GT'.
+# ** Warning: mapped/address_update_r.v(2937): (vopt-2685) [TFMPC] - Too few port connections for 'add_84'.  Expected 5, found 4.
+# ** Warning: mapped/address_update_r.v(2937): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/address_update_r.v(2952): (vopt-2685) [TFMPC] - Too few port connections for 'add_82'.  Expected 5, found 4.
+# ** Warning: mapped/address_update_r.v(2952): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/address_update_r.v(2954): (vopt-2685) [TFMPC] - Too few port connections for 'gte_70'.  Expected 6, found 5.
+# ** Warning: mapped/address_update_r.v(2954): (vopt-2718) [TFMPC] - Missing connection for port 'GE_GT'.
+# ** Warning: mapped/address_update_r.v(2958): (vopt-2685) [TFMPC] - Too few port connections for 'add_70'.  Expected 5, found 4.
+# ** Warning: mapped/address_update_r.v(2958): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: source/tb_address_update_r.sv(22): (vopt-2685) [TFMPC] - Too few port connections for 'DUT_ADDRESS_UPDATE'.  Expected 9, found 8.
+# ** Warning: source/tb_address_update_r.sv(22): (vopt-2718) [TFMPC] - Missing connection for port 'end_of_image'.
+# Loading sv_std.std
+# Loading work.tb_address_update_r(fast)
+# Loading work.address_update_r(fast)
+# Loading work.flex_counter_NUM_CNT_BITS32(fast)
+# Loading work.flex_counter_NUM_CNT_BITS32_DW01_dec_0(fast)
+# Loading work.flex_counter_NUM_CNT_BITS32_DW01_inc_0(fast)
+# Loading work.address_update_r_DW01_add_0(fast)
+# Loading work.address_update_r_DW01_cmp2_0(fast)
+# Loading work.address_update_r_DW01_add_1(fast)
+# Loading work.address_update_r_DW01_inc_0(fast)
+# Loading work.address_update_r_DW01_add_2(fast)
+# Loading work.address_update_r_DW01_cmp2_1(fast)
+# Loading work.address_update_r_DW01_add_3(fast)
+# Loading work.address_update_r_DW_mult_uns_2(fast)
+# Loading work.address_update_r_DW_mult_uns_3(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr(metastabilitywrapperarch)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.prim(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr_core(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xnor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.hax1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand3x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.mux2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.fax1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi22x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+# ** Warning: (vsim-8822) mapped/address_update_r.v(696): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_address_update_r/DUT_ADDRESS_UPDATE/add_84/U1_31
+# ** Warning: (vsim-8822) mapped/address_update_r.v(803): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_address_update_r/DUT_ADDRESS_UPDATE/add_82/U1_31
+# ** Warning: (vsim-8822) mapped/address_update_r.v(1009): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_address_update_r/DUT_ADDRESS_UPDATE/add_70/U1_31
+do /home/ecegrid/a/mg131/ece337/test/wave_addr_update_r.do
+# ** Error: (vish-4014) No objects found matching '/tb_address_update_r/DUT_ADDRESS_UPDATE/column_count'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_addr_update_r.do line 13
+# ** Error: (vish-4014) No objects found matching '/tb_address_update_r/DUT_ADDRESS_UPDATE/last_possible_row'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_addr_update_r.do line 15
+# ** Error: (vish-4014) No objects found matching '/tb_address_update_r/DUT_ADDRESS_UPDATE/update_en_r'.
+# Executing ONERROR command at macro /home/ecegrid/a/mg131/ece337/test/wave_addr_update_r.do line 17
+run 1200 ns
+# End time: 14:32:12 on Apr 16,2017, Elapsed time: 0:00:40
+# Errors: 9, Warnings: 19

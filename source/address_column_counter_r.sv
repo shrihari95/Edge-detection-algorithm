@@ -1,0 +1,27 @@
+// $Id: $
+// File name:   address_column_counter_r.sv
+// Created:     3/22/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: ADDRESS_COLUMN_COUNTER (READ) for AHB
+module address_column_counter_r
+(
+	input wire HCLK, 
+	input wire HRESETn, 
+	input reg [15:0] length, 
+	input reg [15:0] width, 
+	input wire addr_update_enable_r, 
+	output wire plus4_r
+);
+	reg [31:0] count_out;
+	flex_counter#(32) COLUMN_COUNTER
+	(
+		.clk(HCLK), 
+		.n_rst(HRESETn), 
+		.count_enable(addr_update_enable_r), 
+		.rollover_val(length - 4), 
+		.count_out(count_out), 
+		.rollover_flag(plus4_r)
+	);
+endmodule

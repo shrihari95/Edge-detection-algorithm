@@ -1,0 +1,112 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ahb_slave
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 18:42:44 2017
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: AHB_SLAVE_CONTROLLER/state_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: write_enable
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  AHB_SLAVE_CONTROLLER/state_reg[1]/CLK (DFFSR)           0.00       0.00 r
+  AHB_SLAVE_CONTROLLER/state_reg[1]/Q (DFFSR)             0.45       0.45 r
+  AHB_SLAVE_CONTROLLER/U33/Y (INVX1)                      0.35       0.80 f
+  AHB_SLAVE_CONTROLLER/U31/Y (NAND2X1)                    0.23       1.02 r
+  AHB_SLAVE_CONTROLLER/U30/Y (INVX1)                      0.15       1.17 f
+  AHB_SLAVE_CONTROLLER/U21/Y (AND2X1)                     0.28       1.45 f
+  AHB_SLAVE_CONTROLLER/write_enable (controller_ahb_slave)
+                                                          0.00       1.45 f
+  write_enable (out)                                      0.00       1.45 f
+  data arrival time                                                  1.45
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : ahb_slave
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 18:42:44 2017
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                          346
+Number of nets:                           813
+Number of cells:                          570
+Number of combinational cells:            271
+Number of sequential cells:               297
+Number of macros/black boxes:               0
+Number of buf/inv:                         84
+Number of references:                       2
+
+Combinational area:              57924.000000
+Buf/Inv area:                    12816.000000
+Noncombinational area:          156816.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                214740.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : ahb_slave
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 18:42:45 2017
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+ahb_slave                                 5.080   16.845   83.101   21.925 100.0
+  AHB_SLAVE_DECODER (decoder_ahb)         4.504   16.026   79.471   20.530  93.6
+  AHB_SLAVE_CONTROLLER (controller_ahb_slave)
+                                          0.577    0.818    3.630    1.395   6.4
+1

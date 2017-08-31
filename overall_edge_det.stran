@@ -1,0 +1,110 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work/.tb_overall_edge_det 
+# Start time: 11:28:18 on Apr 19,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_overall_edge_det(fast)
+# Loading work.overall_edge_det(fast)
+# Loading work.mcu(fast)
+# Loading work.gx_block_window1(fast)
+# Loading work.gx_block_window2(fast)
+# Loading work.gy_block_window1(fast)
+# Loading work.gy_block_window2(fast)
+# Loading work.result_1(fast)
+# Loading work.result_2(fast)
+# ** Warning: (vsim-3015) source/overall_edge_det.sv(42): [PCDPC] - Port size (10) does not match connection size (11) for port 'gx_out_1'. The port definition is at: source/gx_block_window1.sv(14).
+#         Region: /tb_overall_edge_det/overall/gx1
+# ** Warning: (vsim-3015) source/overall_edge_det.sv(50): [PCDPC] - Port size (10) does not match connection size (11) for port 'gx_out_2'. The port definition is at: source/gx_block_window2.sv(15).
+#         Region: /tb_overall_edge_det/overall/gx2
+# ** Warning: (vsim-3015) source/overall_edge_det.sv(58): [PCDPC] - Port size (10) does not match connection size (11) for port 'gy_out_1'. The port definition is at: source/gy_block_window1.sv(14).
+#         Region: /tb_overall_edge_det/overall/gy1
+# ** Warning: (vsim-3015) source/overall_edge_det.sv(66): [PCDPC] - Port size (10) does not match connection size (11) for port 'gy_out_2'. The port definition is at: source/gy_block_window2.sv(13).
+#         Region: /tb_overall_edge_det/overall/gy2
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gx_block_window1.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 11:28:56 on Apr 19,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gx_block_window1.sv 
+# -- Compiling module gx_block_window1
+# 
+# Top level modules:
+# 	gx_block_window1
+# End time: 11:28:56 on Apr 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gx_block_window2.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 11:28:56 on Apr 19,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gx_block_window2.sv 
+# -- Compiling module gx_block_window2
+# 
+# Top level modules:
+# 	gx_block_window2
+# End time: 11:28:56 on Apr 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gy_block_window1.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 11:28:56 on Apr 19,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gy_block_window1.sv 
+# -- Compiling module gy_block_window1
+# 
+# Top level modules:
+# 	gy_block_window1
+# End time: 11:28:56 on Apr 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gy_block_window2.sv
+# QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+# Start time: 11:28:56 on Apr 19,2017
+# vlog -reportprogress 300 -sv -work source_work /home/ecegrid/a/mg131/ece337/test/source/gy_block_window2.sv 
+# -- Compiling module gy_block_window2
+# 
+# Top level modules:
+# 	gy_block_window2
+# End time: 11:28:56 on Apr 19,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_overall_edge_det(fast)
+# Loading work.overall_edge_det(fast)
+# Loading work.mcu(fast)
+# Loading work.gx_block_window1(fast)
+# Loading work.gx_block_window2(fast)
+# Loading work.gy_block_window1(fast)
+# Loading work.gy_block_window2(fast)
+# Loading work.result_1(fast)
+# Loading work.result_2(fast)
+do /home/ecegrid/a/mg131/ece337/test/wave_sobel_module.do
+run 200 ns
+run 200 ns
+run 200 ns
+run 200 ns
+add wave -position end  sim:/tb_overall_edge_det/overall/res1/abs_gx_out_1
+add wave -position end  sim:/tb_overall_edge_det/overall/res1/abs_gy_out_1
+add wave -position end  sim:/tb_overall_edge_det/overall/res1/sum
+add wave -position end  sim:/tb_overall_edge_det/overall/res2/abs_gx_out_2
+add wave -position end  sim:/tb_overall_edge_det/overall/res2/abs_gy_out_2
+add wave -position end  sim:/tb_overall_edge_det/overall/res2/sum
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_overall_edge_det(fast)
+# Loading work.overall_edge_det(fast)
+# Loading work.mcu(fast)
+# Loading work.gx_block_window1(fast)
+# Loading work.gx_block_window2(fast)
+# Loading work.gy_block_window1(fast)
+# Loading work.gy_block_window2(fast)
+# Loading work.result_1(fast)
+# Loading work.result_2(fast)
+run 200 ns
+run 600 ns
+# End time: 11:31:14 on Apr 19,2017, Elapsed time: 0:02:56
+# Errors: 0, Warnings: 4

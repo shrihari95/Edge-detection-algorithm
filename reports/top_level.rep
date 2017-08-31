@@ -1,0 +1,377 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top_level
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 20:39:23 2017
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: AHB_SLAVE_PROTOCOL/AHB_SLAVE_DECODER/length_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/offset_r_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  AHB_SLAVE_PROTOCOL/AHB_SLAVE_DECODER/length_reg[2]/CLK (DFFSR)
+                                                          0.00       0.00 r
+  AHB_SLAVE_PROTOCOL/AHB_SLAVE_DECODER/length_reg[2]/Q (DFFSR)
+                                                          1.08       1.08 f
+  AHB_SLAVE_PROTOCOL/AHB_SLAVE_DECODER/length[2] (decoder_ahb)
+                                                          0.00       1.08 f
+  AHB_SLAVE_PROTOCOL/length[2] (ahb_slave)                0.00       1.08 f
+  AHB_MASTER_PROTOCOL/length[2] (ahb_master)              0.00       1.08 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/length[2] (address_update_r)
+                                                          0.00       1.08 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U58/Y (BUFX2)
+                                                          0.78       1.86 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/a[2] (address_update_r_DW_mult_uns_1)
+                                                          0.00       1.86 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U801/Y (INVX2)
+                                                          0.32       2.18 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U797/Y (INVX2)
+                                                          0.96       3.14 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U1042/Y (XOR2X1)
+                                                          0.34       3.47 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U884/Y (INVX2)
+                                                          0.12       3.59 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U1038/Y (NOR2X1)
+                                                          0.17       3.76 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U808/Y (INVX2)
+                                                          0.63       4.39 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U965/Y (OAI22X1)
+                                                          0.36       4.76 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U964/Y (XOR2X1)
+                                                          0.24       5.00 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U206/YS (HAX1)
+                                                          0.54       5.54 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/U118/YS (FAX1)
+                                                          0.64       6.17 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/mult_69/product[3] (address_update_r_DW_mult_uns_1)
+                                                          0.00       6.17 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/A[3] (address_update_r_DW01_add_3)
+                                                          0.00       6.17 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_3/YC (FAX1)
+                                                          0.46       6.64 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_4/YC (FAX1)
+                                                          0.46       7.09 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_5/YC (FAX1)
+                                                          0.46       7.55 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_6/YC (FAX1)
+                                                          0.46       8.01 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_7/YC (FAX1)
+                                                          0.46       8.47 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_8/YC (FAX1)
+                                                          0.46       8.93 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_9/YC (FAX1)
+                                                          0.46       9.38 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_10/YC (FAX1)
+                                                          0.46       9.84 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_11/YC (FAX1)
+                                                          0.46      10.30 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_12/YC (FAX1)
+                                                          0.46      10.76 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_13/YC (FAX1)
+                                                          0.46      11.22 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_14/YC (FAX1)
+                                                          0.46      11.68 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_15/YC (FAX1)
+                                                          0.46      12.14 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_16/YC (FAX1)
+                                                          0.46      12.59 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_17/YC (FAX1)
+                                                          0.46      13.05 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_18/YC (FAX1)
+                                                          0.46      13.51 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_19/YC (FAX1)
+                                                          0.46      13.96 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_20/YC (FAX1)
+                                                          0.46      14.42 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_21/YC (FAX1)
+                                                          0.46      14.88 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_22/YC (FAX1)
+                                                          0.46      15.33 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_23/YC (FAX1)
+                                                          0.46      15.79 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_24/YC (FAX1)
+                                                          0.46      16.25 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_25/YC (FAX1)
+                                                          0.46      16.70 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_26/YC (FAX1)
+                                                          0.46      17.16 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_27/YC (FAX1)
+                                                          0.46      17.62 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_28/YC (FAX1)
+                                                          0.46      18.07 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_29/YC (FAX1)
+                                                          0.46      18.53 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_30/YC (FAX1)
+                                                          0.46      18.99 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/U1_31/YS (FAX1)
+                                                          0.49      19.48 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/add_69/SUM[31] (address_update_r_DW01_add_3)
+                                                          0.00      19.48 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/B[31] (address_update_r_DW_cmp_1)
+                                                          0.00      19.48 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/U238/Y (NAND2X1)
+                                                          0.11      19.59 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/U237/Y (OAI21X1)
+                                                          0.20      19.78 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/U234/Y (OR2X1)
+                                                          0.33      20.12 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/U231/Y (NOR3X1)
+                                                          0.31      20.43 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/U230/Y (NAND3X1)
+                                                          0.22      20.64 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/U206/Y (OAI21X1)
+                                                          0.16      20.80 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/gte_69/GE_LT_GT_LE (address_update_r_DW_cmp_1)
+                                                          0.00      20.80 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U396/Y (INVX2)
+                                                          0.10      20.90 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U106/Y (OAI21X1)
+                                                          0.70      21.60 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U55/Y (INVX2)
+                                                          0.20      21.80 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U16/Y (INVX2)
+                                                          0.72      22.51 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U96/Y (AOI22X1)
+                                                          0.22      22.74 r
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/U95/Y (OAI21X1)
+                                                          0.08      22.82 f
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/offset_r_reg[2]/D (DFFSR)
+                                                          0.00      22.82 f
+  data arrival time                                                 22.82
+
+  clock clk (rise edge)                                  40.00      40.00
+  clock network delay (ideal)                             0.00      40.00
+  AHB_MASTER_PROTOCOL/ADDRESS_UPDATE_READ/offset_r_reg[2]/CLK (DFFSR)
+                                                          0.00      40.00 r
+  library setup time                                     -0.11      39.89
+  data required time                                                39.89
+  --------------------------------------------------------------------------
+  data required time                                                39.89
+  data arrival time                                                -22.82
+  --------------------------------------------------------------------------
+  slack (MET)                                                       17.07
+
+
+1
+ 
+****************************************
+Report : area
+Design : top_level
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 20:39:23 2017
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                         5086
+Number of nets:                         13575
+Number of cells:                         8113
+Number of combinational cells:           6856
+Number of sequential cells:              1180
+Number of macros/black boxes:               0
+Number of buf/inv:                       1465
+Number of references:                       4
+
+Combinational area:            2834343.000000
+Buf/Inv area:                   217800.000000
+Noncombinational area:          840312.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               3674655.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : top_level
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 20:39:24 2017
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+top_level                                 5.568   32.077 1.18e+03   37.646 100.0
+  EDGE_DETECTION_MODULE (overall_edge_det)
+                                          0.177    2.590  150.439    2.768   7.4
+    res2 (result_2)                    4.91e-03 4.38e-03   14.138 9.30e-03   0.0
+      add_25 (result_2_DW01_add_0)     4.13e-04 6.94e-04    3.941 1.11e-03   0.0
+    res1 (result_1)                    4.86e-03 4.28e-03   14.138 9.16e-03   0.0
+      add_24 (result_1_DW01_add_0)     4.00e-04 6.76e-04    3.941 1.08e-03   0.0
+    gy2 (gy_block_window2)             4.35e-02    0.607   27.834    0.650   1.7
+      add_50 (gy_block_window2_DW01_add_0)
+                                       4.39e-03 9.28e-03    3.941 1.37e-02   0.0
+      add_0_root_sub_0_root_sub_49 (gy_block_window2_DW01_add_1)
+                                       6.05e-03 6.28e-03    3.576 1.23e-02   0.0
+      add_0_root_sub_0_root_sub_48 (gy_block_window2_DW01_add_2)
+                                       7.43e-03 7.04e-03    3.576 1.45e-02   0.0
+      sub_2_root_sub_0_root_sub_49 (gy_block_window2_DW01_sub_0)
+                                       6.40e-03 5.11e-03    3.112 1.15e-02   0.0
+      sub_2_root_sub_0_root_sub_48 (gy_block_window2_DW01_sub_1)
+                                       8.02e-03 7.15e-03    3.112 1.52e-02   0.0
+      r939 (gy_block_window2_DW01_sub_2)
+                                       9.59e-03 6.67e-03    3.112 1.63e-02   0.0
+    gy1 (gy_block_window1)             4.52e-02    0.611   30.348    0.656   1.7
+      add_52 (gy_block_window1_DW01_add_0)
+                                       4.97e-03 1.02e-02    3.941 1.52e-02   0.0
+      sub_0_root_sub_0_root_sub_51 (gy_block_window1_DW01_sub_0)
+                                       1.10e-02 8.19e-03    3.507 1.92e-02   0.1
+      add_0_root_sub_0_root_sub_50 (gy_block_window1_DW01_add_1)
+                                       8.12e-03 7.17e-03    3.576 1.53e-02   0.0
+      add_1_root_sub_0_root_sub_51 (gy_block_window1_DW01_add_2)
+                                       1.36e-03 1.49e-03    2.848 2.85e-03   0.0
+      sub_1_root_sub_0_root_sub_50 (gy_block_window1_DW01_sub_1)
+                                       7.64e-03 7.16e-03    3.112 1.48e-02   0.0
+      add_2_root_sub_0_root_sub_51 (gy_block_window1_DW01_add_3)
+                                       1.88e-03 5.26e-03    2.848 7.15e-03   0.0
+      sub_2_root_sub_0_root_sub_50 (gy_block_window1_DW01_sub_2)
+                                       8.67e-03 6.36e-03    3.112 1.50e-02   0.0
+    gx2 (gx_block_window2)             3.38e-02    0.599   30.348    0.633   1.7
+      add_53 (gx_block_window2_DW01_add_0)
+                                       3.46e-03 8.03e-03    3.941 1.15e-02   0.0
+      sub_0_root_sub_0_root_sub_52 (gx_block_window2_DW01_sub_0)
+                                       6.15e-03 4.69e-03    3.507 1.08e-02   0.0
+      add_0_root_sub_0_root_sub_51 (gx_block_window2_DW01_add_1)
+                                       7.21e-03 5.86e-03    3.576 1.31e-02   0.0
+      add_1_root_sub_0_root_sub_52 (gx_block_window2_DW01_add_2)
+                                       1.52e-03 1.79e-03    2.848 3.31e-03   0.0
+      sub_1_root_sub_0_root_sub_51 (gx_block_window2_DW01_sub_1)
+                                       4.42e-03 4.01e-03    3.112 8.43e-03   0.0
+      add_2_root_sub_0_root_sub_52 (gx_block_window2_DW01_add_3)
+                                       8.30e-04 2.17e-03    2.848 3.01e-03   0.0
+      sub_2_root_sub_0_root_sub_51 (gx_block_window2_DW01_sub_2)
+                                       8.53e-03 7.59e-03    3.112 1.61e-02   0.0
+    gx1 (gx_block_window1)             3.92e-02    0.602   30.946    0.641   1.7
+      add_52 (gx_block_window1_DW01_add_0)
+                                       3.82e-03 8.89e-03    3.941 1.27e-02   0.0
+      add_0_root_sub_0_root_sub_51 (gx_block_window1_DW01_add_1)
+                                       3.94e-03 3.52e-03    3.576 7.47e-03   0.0
+      add_0_root_sub_0_root_sub_50 (gx_block_window1_DW01_add_2)
+                                       8.56e-03 7.31e-03    3.576 1.59e-02   0.0
+      sub_1_root_sub_0_root_sub_51 (gx_block_window1_DW01_sub_0)
+                                       2.72e-03 2.43e-03    3.112 5.15e-03   0.0
+      sub_1_root_sub_0_root_sub_50 (gx_block_window1_DW01_sub_1)
+                                       4.52e-03 4.16e-03    3.112 8.68e-03   0.0
+      sub_2_root_sub_0_root_sub_51 (gx_block_window1_DW01_sub_2)
+                                       5.06e-03 3.96e-03    3.112 9.02e-03   0.0
+      sub_2_root_sub_0_root_sub_50 (gx_block_window1_DW01_sub_3)
+                                       8.91e-03 6.66e-03    3.112 1.56e-02   0.0
+    control (mcu)                      5.69e-03    0.162    2.686    0.168   0.4
+  DATA_BUFFER (fill_in_buffer)            0.347    6.764  126.936    7.111  18.9
+    PIXEL_COUNTER (flex_counter_NUM_CNT_BITS32_3)
+                                       8.43e-02    1.745   50.721    1.830   4.9
+      add_54 (flex_counter_NUM_CNT_BITS32_3_DW01_inc_0)
+                                       1.10e-03 6.03e-03    8.192 7.14e-03   0.0
+      sub_56 (flex_counter_NUM_CNT_BITS32_3_DW01_dec_0)
+                                          0.000    0.000    4.968 4.97e-06   0.0
+  AHB_MASTER_PROTOCOL (ahb_master)        4.448   17.155  837.038   21.604  57.4
+    SEND_PIXEL_DATA (fifo_r)              0.197    3.579   74.230    3.776  10.0
+      SHIFT_COUNTER_READ (flex_counter_NUM_CNT_BITS32_0)
+                                       6.29e-02    1.729   50.690    1.792   4.8
+        add_54 (flex_counter_NUM_CNT_BITS32_0_DW01_inc_0)
+                                       1.02e-03 3.52e-03    8.192 4.55e-03   0.0
+        sub_56 (flex_counter_NUM_CNT_BITS32_0_DW01_dec_0)
+                                          0.000    0.000    4.968 4.97e-06   0.0
+    GET_STARTING_ADDRESS_READ (get_address_r)
+                                          1.010    2.860  194.698    3.870  10.3
+      add_35 (get_address_r_DW01_add_0)
+                                       1.51e-02 3.78e-02   11.591 5.29e-02   0.1
+      mult_35 (get_address_r_DW_mult_uns_0)
+                                          0.921    1.108  132.233    2.029   5.4
+      ROW_COUNTER (flex_counter_NUM_CNT_BITS32_1)
+                                       7.46e-02    1.714   50.874    1.789   4.8
+        add_54 (flex_counter_NUM_CNT_BITS32_1_DW01_inc_0)
+                                       2.60e-04 1.75e-03    8.192 2.02e-03   0.0
+        sub_56 (flex_counter_NUM_CNT_BITS32_1_DW01_dec_0)
+                                          0.000    0.000    4.968 4.97e-06   0.0
+    ADDRESS_UPDATE_READ (address_update_r)
+                                          2.143    6.970  377.117    9.113  24.2
+      add_83 (address_update_r_DW01_add_2)
+                                       2.76e-02 5.61e-02   11.591 8.37e-02   0.2
+      mult_83 (address_update_r_DW_mult_uns_0)
+                                          0.652    0.632   91.727    1.284   3.4
+      add_69 (address_update_r_DW01_add_3)
+                                       2.76e-02 5.39e-02   11.591 8.15e-02   0.2
+      mult_69 (address_update_r_DW_mult_uns_1)
+                                          0.672    0.628   91.882    1.300   3.5
+      r326 (address_update_r_DW01_inc_1)
+                                       6.04e-05 2.09e-04    8.192 2.77e-04   0.0
+      gte_69 (address_update_r_DW_cmp_1)
+                                       2.52e-02 2.09e-02    7.703 4.61e-02   0.1
+      add_74 (address_update_r_DW01_add_1)
+                                          0.000    0.000    8.512 8.51e-06   0.0
+      add_75 (address_update_r_DW01_inc_0)
+                                          0.000    0.000    8.192 8.19e-06   0.0
+      add_81 (address_update_r_DW01_add_0)
+                                       3.41e-02 2.88e-02   11.591 6.29e-02   0.2
+      gte_83 (address_update_r_DW_cmp_0)
+                                       2.52e-02 2.09e-02    7.703 4.61e-02   0.1
+      COLUMN_COUNTER (flex_counter_NUM_CNT_BITS32_2)
+                                          0.120    1.968   50.690    2.088   5.5
+        add_54 (flex_counter_NUM_CNT_BITS32_2_DW01_inc_0)
+                                       4.00e-05 1.71e-04    8.192 2.19e-04   0.0
+        sub_56 (flex_counter_NUM_CNT_BITS32_2_DW01_dec_0)
+                                       5.14e-02 9.23e-02    4.968    0.144   0.4
+    WRITE_PIXEL_DATA (fifo_w)          2.75e-02    0.868   10.582    0.895   2.4
+    ADDRESS_UPDATE_WRITE (address_update_w)
+                                          0.885    2.467  166.141    3.353   8.9
+      sub_32 (address_update_w_DW01_sub_0)
+                                       6.57e-02 6.76e-02    8.496    0.133   0.4
+      mult_32 (address_update_w_DW_mult_uns_0)
+                                          0.741    0.683   98.399    1.424   3.8
+      r312 (address_update_w_DW01_add_1)
+                                       8.20e-03 2.54e-02   11.591 3.36e-02   0.1
+      add_38 (address_update_w_DW01_add_0)
+                                       7.55e-06 4.56e-05    8.543 6.17e-05   0.0
+      add_42 (address_update_w_DW01_inc_0)
+                                       3.04e-04 1.00e-03    8.192 1.32e-03   0.0
+    AHB_CONTROLLER (controller_ahb)    9.95e-02    0.342    7.940    0.442   1.2
+  AHB_SLAVE_PROTOCOL (ahb_slave)          0.596    5.568   70.482    6.164  16.4
+    AHB_SLAVE_DECODER (decoder_ahb)       0.552    5.357   67.276    5.909  15.7
+    AHB_SLAVE_CONTROLLER (controller_ahb_slave)
+                                       4.40e-02    0.211    3.206    0.255   0.7
+1

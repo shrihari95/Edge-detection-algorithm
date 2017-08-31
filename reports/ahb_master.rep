@@ -1,0 +1,206 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ahb_master
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 18:54:18 2017
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: GET_STARTING_ADDRESS_READ/ROW_COUNTER/count_out_reg[0]
+              (rising edge-triggered flip-flop)
+  Endpoint: HADDR[31] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  GET_STARTING_ADDRESS_READ/ROW_COUNTER/count_out_reg[0]/CLK (DFFSR)
+                                                          0.00       0.00 r
+  GET_STARTING_ADDRESS_READ/ROW_COUNTER/count_out_reg[0]/Q (DFFSR)
+                                                          0.78       0.78 f
+  GET_STARTING_ADDRESS_READ/ROW_COUNTER/count_out[0] (flex_counter_NUM_CNT_BITS32_1)
+                                                          0.00       0.78 f
+  GET_STARTING_ADDRESS_READ/mult_35/b[0] (get_address_r_DW_mult_uns_1)
+                                                          0.00       0.78 f
+  GET_STARTING_ADDRESS_READ/mult_35/U854/Y (BUFX4)        0.73       1.51 f
+  GET_STARTING_ADDRESS_READ/mult_35/U727/Y (XNOR2X1)      0.27       1.79 f
+  GET_STARTING_ADDRESS_READ/mult_35/U693/Y (OAI22X1)      0.15       1.93 r
+  GET_STARTING_ADDRESS_READ/mult_35/U97/YS (HAX1)         0.51       2.44 f
+  GET_STARTING_ADDRESS_READ/mult_35/product[1] (get_address_r_DW_mult_uns_1)
+                                                          0.00       2.44 f
+  GET_STARTING_ADDRESS_READ/add_35/B[1] (get_address_r_DW01_add_0)
+                                                          0.00       2.44 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_1/YC (FAX1)         0.47       2.91 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_2/YC (FAX1)         0.45       3.37 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_3/YC (FAX1)         0.45       3.82 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_4/YC (FAX1)         0.45       4.27 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_5/YC (FAX1)         0.45       4.73 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_6/YC (FAX1)         0.45       5.18 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_7/YC (FAX1)         0.45       5.64 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_8/YC (FAX1)         0.45       6.09 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_9/YC (FAX1)         0.45       6.55 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_10/YC (FAX1)        0.45       7.00 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_11/YC (FAX1)        0.45       7.46 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_12/YC (FAX1)        0.45       7.91 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_13/YC (FAX1)        0.45       8.36 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_14/YC (FAX1)        0.45       8.82 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_15/YC (FAX1)        0.45       9.27 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_16/YC (FAX1)        0.45       9.73 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_17/YC (FAX1)        0.45      10.18 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_18/YC (FAX1)        0.45      10.64 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_19/YC (FAX1)        0.45      11.09 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_20/YC (FAX1)        0.45      11.54 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_21/YC (FAX1)        0.45      12.00 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_22/YC (FAX1)        0.45      12.45 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_23/YC (FAX1)        0.45      12.91 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_24/YC (FAX1)        0.45      13.36 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_25/YC (FAX1)        0.45      13.82 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_26/YC (FAX1)        0.45      14.27 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_27/YC (FAX1)        0.45      14.72 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_28/YC (FAX1)        0.45      15.18 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_29/YC (FAX1)        0.45      15.63 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_30/YC (FAX1)        0.45      16.09 f
+  GET_STARTING_ADDRESS_READ/add_35/U1_31/YS (FAX1)        0.44      16.53 r
+  GET_STARTING_ADDRESS_READ/add_35/SUM[31] (get_address_r_DW01_add_0)
+                                                          0.00      16.53 r
+  GET_STARTING_ADDRESS_READ/start_addr_r[31] (get_address_r)
+                                                          0.00      16.53 r
+  U49/Y (MUX2X1)                                          0.12      16.65 f
+  HADDR_tri[31]/Y (TBUFX1)                                0.08      16.74 r
+  HADDR[31] (out)                                         0.00      16.74 r
+  data arrival time                                                 16.74
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : ahb_master
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 18:54:18 2017
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                         2566
+Number of nets:                          8790
+Number of cells:                         5756
+Number of combinational cells:           5126
+Number of sequential cells:               600
+Number of macros/black boxes:               0
+Number of buf/inv:                       1148
+Number of references:                       9
+
+Combinational area:            2153286.000000
+Buf/Inv area:                   187272.000000
+Noncombinational area:          430056.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               2583342.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : ahb_master
+Version: K-2015.06-SP1
+Date   : Tue Apr 25 18:54:18 2017
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+ahb_master                             1.08e+03 1.09e+03  838.438 2.17e+03 100.0
+  SEND_PIXEL_DATA (fifo_r)                1.020    8.129   74.072    9.149   0.4
+    SHIFT_COUNTER_READ (flex_counter_NUM_CNT_BITS32_0)
+                                       1.50e-03    3.378   50.609    3.380   0.2
+      add_54 (flex_counter_NUM_CNT_BITS32_0_DW01_inc_0)
+                                          0.000    0.000    8.192 8.19e-06   0.0
+      sub_56 (flex_counter_NUM_CNT_BITS32_0_DW01_dec_0)
+                                          0.000    0.000    4.968 4.97e-06   0.0
+  GET_STARTING_ADDRESS_READ (get_address_r)
+                                        177.308  167.835  200.042  345.143  15.9
+    mult_35 (get_address_r_DW_mult_uns_1)
+                                        175.976  160.451  137.842  336.428  15.5
+    add_35 (get_address_r_DW01_add_0)     1.293    3.994   11.591    5.287   0.2
+    ROW_COUNTER (flex_counter_NUM_CNT_BITS32_1)
+                                       3.90e-02    3.390   50.609    3.429   0.2
+      add_54 (flex_counter_NUM_CNT_BITS32_1_DW01_inc_0)
+                                       1.31e-04 4.70e-04    8.192 6.09e-04   0.0
+      sub_56 (flex_counter_NUM_CNT_BITS32_1_DW01_dec_0)
+                                          0.000    0.000    4.968 4.97e-06   0.0
+  ADDRESS_UPDATE_READ (address_update_r)
+                                        601.893  577.195  367.448 1.18e+03  54.4
+    mult_83 (address_update_r_DW_mult_uns_3)
+                                        254.576  229.589   98.038  484.164  22.3
+    mult_69 (address_update_r_DW_mult_uns_2)
+                                        254.576  230.067   98.038  484.643  22.4
+    add_69 (address_update_r_DW01_add_3)
+                                         21.313   30.722   11.591   52.035   2.4
+    gte_69 (address_update_r_DW01_cmp2_1)
+                                          7.398    9.652    6.278   17.049   0.8
+    add_81 (address_update_r_DW01_add_2)
+                                          4.874    3.295   11.591    8.169   0.4
+    add_75 (address_update_r_DW01_inc_0)
+                                          0.000    0.000    8.192 8.19e-06   0.0
+    add_83 (address_update_r_DW01_add_1)
+                                         21.313   30.722   11.591   52.035   2.4
+    gte_83 (address_update_r_DW01_cmp2_0)
+                                          7.398    9.652    6.278   17.049   0.8
+    r403 (address_update_r_DW01_add_0)    0.000    0.000    9.472 9.47e-06   0.0
+    COLUMN_COUNTER (flex_counter_NUM_CNT_BITS32_2)
+                                          5.190   16.818   50.609   22.008   1.0
+      add_54 (flex_counter_NUM_CNT_BITS32_2_DW01_inc_0)
+                                          0.000    0.000    8.192 8.19e-06   0.0
+      sub_56 (flex_counter_NUM_CNT_BITS32_2_DW01_dec_0)
+                                          3.088    4.346    4.968    7.434   0.3
+  WRITE_PIXEL_DATA (fifo_w)            1.79e-02    4.211   22.003    4.229   0.2
+  ADDRESS_UPDATE_WRITE (address_update_w)
+                                        293.935  323.237  160.931  617.173  28.5
+    mult_32 (address_update_w_DW_mult_uns_1)
+                                        270.726  264.616  101.864  535.342  24.7
+    sub_32 (address_update_w_DW01_sub_0)
+                                         14.428   26.081    8.496   40.509   1.9
+    r330 (address_update_w_DW01_add_1)    1.296    3.327   11.591    4.623   0.2
+    r347 (address_update_w_DW01_add_0) 1.09e-04 3.20e-04    9.472 4.38e-04   0.0
+  AHB_CONTROLLER (controller_ahb)         0.607    1.353    7.083    1.960   0.1
+1

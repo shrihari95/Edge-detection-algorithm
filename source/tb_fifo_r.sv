@@ -1,0 +1,90 @@
+// $Id: $
+// File name:   tb_fifo_r.sv
+// Created:     3/22/2017
+// Author:      Hengyi Lin
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Test bench for fifo (READ)
+`timescale 1ns / 10ps
+
+module tb_fifo_r();
+	localparam CLK_PERIOD = 10;
+	reg tb_HCLK;
+	reg tb_HRESETn;
+	reg [1:0] tb_status;
+	reg tb_shift_enable;
+	reg tb_load_enable;
+	reg [31:0] tb_HRDATA;
+	byte tb_data_in;
+	reg tb_transfer_data_complete_r;
+
+	fifo_r DUT_FIFO_R
+	(
+		.HCLK(tb_HCLK), 
+		.HRESETn(tb_HRESETn), 
+		.status(tb_status), 
+		.shift_enable(tb_shift_enable), 
+		.load_enable(tb_load_enable), 
+		.HRDATA(tb_HRDATA), 
+		.data_in(tb_data_in), 
+		.transfer_data_complete_r(tb_transfer_data_complete_r)
+	);
+
+	// Generate clock
+	always
+	begin
+		tb_HCLK = 1'b0;
+		#(CLK_PERIOD / 2);
+		tb_HCLK = 1'b1;
+		#(CLK_PERIOD / 2);
+	end
+
+	initial
+	begin
+		tb_HRDATA = 32'h12326485;
+		tb_load_enable = 0;
+		tb_shift_enable = 0;
+		tb_status = 2'b00;
+		tb_HRESETn = 0;
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		tb_HRESETn = 1;
+		tb_status = 2'b10;
+		tb_load_enable = 1;
+		@ (posedge tb_HCLK);
+
+		tb_load_enable = 0;
+		//@ (posedge tb_HCLK);
+
+		tb_shift_enable = 1;
+		@ (posedge tb_HCLK);
+		tb_status = 2'b00;
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		tb_status = 2'b10;
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		tb_shift_enable = 0;
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		tb_HRDATA = 32'h13492F80;
+		tb_load_enable = 1;
+		@ (posedge tb_HCLK);
+
+		tb_load_enable = 0;
+		//@ (posedge tb_HCLK);
+
+		tb_shift_enable = 1;
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+		@ (posedge tb_HCLK);
+
+	end
+endmodule
